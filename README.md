@@ -53,32 +53,5 @@ The web application was developed using **Spring Web MVC** and **Thymeleaf**. Ke
 - **Order Manager Interface**: Enables the order manager to place orders, track order status, and manage suppliers.
 - **Production Manager Interface**: Provides tools for initiating production, tracking production phases, and monitoring bottling processes.
 
-## 🔄 How to Run the Project
-To set up and run the **Whisky Production Management System (Web Application)**, follow these steps:
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/whisky-production-management-web.git
-   ```
-
-2. **Navigate to the project directory**:
-   ```bash
-   cd whisky-production-management-web
-   ```
-
-3. **Install dependencies** (if using Maven):
-   ```bash
-   mvn install
-   ```
-
-4. **Set up the PostgreSQL database**:
-   - Create a database named `whisky_production`.
-   - Update the `persistence.xml` file with your database credentials.
-
-5. **Run the application**:
-   ```bash
-   mvn spring-boot:run
-   ```
-
-6. **Access the application** in your browser at `http://localhost:8080`.
 
