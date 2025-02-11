@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard Rececionista</title>
+    <link rel="stylesheet" href="encomenda_dash.css">
+</head>
+<body>
+<div class="header">Dashboard Rececionista
+    <form action="/logout" method="post">
+        <a class="nav-link" href="login.html"> Logout</a>
+    </form>
+</div>
+<div class="container">
+
+    <div class="panel">
+        <div class="table-header">
+        <h2>Lotes Recebidos</h2>
+            <form action="/add_loterecebido.html" method="post">
+                <button type="submit" class="button" > Registar Lote</button>
+            </form>
+        </div>
+        <table>
+
+            <thead>
+            <tr>
+                <th scope="col">N Lote</th>
+                <th scope="col">N Funcio</th>
+                <th scope="col">N Enco</th>
+                <th scope="col">Quantidade</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="loter : ${lotesrecebidos}">
+                <td th:text="${loter.id_loterecebido}"></td>
+                <td th:text="${loter.id_funcionario}"></td>
+                <td th:text="${loter.id_encomenda}"></td>
+                <td th:text="${loter.qtdrecebida}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel">
+        <h2>Encomendas</h2>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">N Enco</th>
+                <th scope="col">N Forn</th>
+                <th scope="col">N Estado</th>
+                <th scope="col">N Funcio</th>
+                <th scope="col">N Envio</th>
+                <th scope="col">N Estado</th>
+                <th scope="col">Data Emissao</th>
+                <th scope="col">Data Chegada</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Loop through your order states using Thymeleaf -->
+            <tr th:each="enc : ${encomendas}">
+                <td th:text="${enc.id_encomendas}"></td>
+                <td th:text="${enc.id_fornecedor}"></td>
+                <td th:text="${enc.id_estadoencomenda}"></td>
+                <td th:text="${enc.id_funcionario}"></td>
+                <td th:text="${enc.dataemissao}"></td>
+                <td th:text="${enc.n_envio}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel">
+        <div class="table-header">
+        <h2>Fornecedores</h2>
+
+        <button class="button"> Adicionar </button>
+
+        <div>
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">N Fornecedor</th>
+                <th scope="col">Localidade</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Loop through your suppliers using Thymeleaf -->
+            <tr th:each="forn : ${fornecedores}">
+                <td th:text="${forn.id_fornecedor}"></td>
+                <td th:text="${forn.localidade}"></td>
+                <td th:text="${forn.telefone}"></td>
+                <td th:text="${forn.email}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

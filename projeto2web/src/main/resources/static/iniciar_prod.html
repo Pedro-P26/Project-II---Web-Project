@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Iniciar Producao</title>
+    <link rel="stylesheet" type="text/css" href="iniciar_prod.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Iniciar Producao</h1>
+    <form th:action="@{/startProduction}" th:object="${production}" method="post">
+        <div class="form-group">
+            <label for="funcionario">Funcionario:</label>
+            <select id="funcionario" th:field="*{funcionarioId}">
+                <!-- Opções dinâmicas de funcionários -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="faseProducao">Fase Producao:</label>
+            <select id="faseProducao" th:field="*{faseId}">
+                <!-- Opções dinâmicas de fases -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dataInicio">Data Inicio:</label>
+            <input type="date" id="dataInicio" th:field="*{dataInicio}" required>
+        </div>
+        <div class="form-group">
+            <label for="dataFim">Data Fim:</label>
+            <input type="date" id="dataFim" th:field="*{dataFim}">
+        </div>
+        <div class="form-group">
+            <label for="qtdMateriaPrima">Qtd Materia Prima:</label>
+            <input type="number" id="qtdMateriaPrima" th:field="*{quantidadeMateria}" required>
+        </div>
+        <div class="form-group">
+            <label for="qtdProducao">Qtd Producao:</label>
+            <input type="number" id="qtdProducao" th:field="*{quantidadeProducao}" required>
+        </div>
+        <button type="submit" class="btn-confirm">Confirmar</button>
+    </form>
+    <button onclick="window.history.back();" class="btn-back">Voltar</button>
+</div>
+</body>
+</html>

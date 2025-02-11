@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard Producao</title>
+    <link rel="stylesheet" href="encomenda_dash.css">
+</head>
+<body>
+<div class="header">Dashboard Producao
+    <button class="logout-button"   Logout</button>
+    <form action="/logout" method="post">
+        <a class="nav-link" href="login.html"> Logout</a>
+    </form>
+</div>
+<div class="container">
+    <div class="panel">
+        <div class="table-header">
+        <h2>Producao</h2>
+            <button type="submit" class="button" > Iniciar Producao</button>
+        </div>
+        <table>
+            <tr>
+                <th>N Prod</th>
+                <th>N Funcio</th>
+                <th>N Fase</th>
+                <th>Data Inicio</th>
+                <th>Data Fim</th>
+                <th>Qtd Materia</th>
+                <th>Qtd Produzido</th>
+
+            </tr>
+            <!-- Loop through your orders using Thymeleaf -->
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.numOrder}"></td>
+                <td th:text="${order.numSupplier}"></td>
+                <td th:text="${order.status}"></td>
+                <td th:text="${order.employeeId}"></td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="panel">
+        <h2>Fases Producao</h2>
+        <table>
+            <tr>
+                <th>N Fase</th>
+                <th>Descricao</th>
+
+            </tr>
+            <!-- Loop through your order states using Thymeleaf -->
+            <tr>
+                <td>1</td>
+                <td>Malteamento</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Moagem</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Misturacao</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Fermentacao</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Destilacao</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Envelhecimento</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Engarrafamento</td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel">
+        <h2>Engarrafado</h2>
+        <table>
+            <tr>
+                <th>N Prod</th>
+                <th>N Funcio</th>
+                <th>N Fase</th>
+                <th>Data Inicio</th>
+                <th>Data Fim</th>
+                <th>Qtd Materia</th>
+                <th>Qtd Produzido</th>
+            </tr>
+            <!-- Loop through your suppliers using Thymeleaf -->
+            <tr th:each="supplier : ${suppliers}">
+                <td th:text="${supplier.id}"></td>
+                <td th:text="${supplier.location}"></td>
+                <td th:text="${supplier.phone}"></td>
+                <td th:text="${supplier.email}"></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

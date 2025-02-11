@@ -1,0 +1,62 @@
+#body {
+    font-family: Arial, sans-serif;
+    background-color: #F6C645;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    margin: 70px auto;
+    padding: 50px;
+    background-color: #FFEE93;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    #text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttonAdd {
+    background-color: #E6B800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.buttonVoltar {
+    background-color: #E6B800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 6%;
+    border-radius: 4px;
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    top: 90px; /* 10px do topo da página */
+    right: 499px;
+}
+
+h1 {
+    color: #333;
+}

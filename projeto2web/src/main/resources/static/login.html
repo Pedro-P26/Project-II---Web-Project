@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="logincss.css">
+</head>
+<header>
+    <!--<img src="/static/imagens/logo.png" class="move-image" width="50" height="50" alt="">-->
+</header>
+
+<body>
+<div class="login-container">
+
+    <form class="login-form" th:action="@{/login}" method="POST">
+        <text class="title">Legacy Malts C.o.</text>
+        <div class="form-group">
+            <label for="username" class="form-label">Username</label>
+            <input type="username" id="username" name="username" class="form-input" placeholder="Username"/>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-input" placeholder="Password" />
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+</div>
+</body>
+</html>
+

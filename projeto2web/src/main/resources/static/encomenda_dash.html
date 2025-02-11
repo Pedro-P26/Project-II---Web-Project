@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard GestorEncomendas</title>
+    <link rel="stylesheet" href="encomenda_dash.css">
+</head>
+<body>
+<div class="header">Dashboard GestorEncomendas
+    <button class="logout-button" Logout</button>
+    <form action="/logout" method="post">
+        <a class="nav-link" href="login.html"> Logout</a>
+    </form>
+</div>
+<div class="container">
+    <div class="panel">
+        <div class="table-header">
+        <h2>Encomendas</h2>
+            <button type="submit" class="button" > Adicionar</button>
+        </div>
+        <table>
+            <tr>
+                <th>N Enco</th>
+                <th>N Forn</th>
+                <th>N Estado</th>
+                <th>N Funcio</th>
+                <th>Data Emissao</th>
+                <th>Data Chegada</th>
+            </tr>
+            <!-- Loop through your orders using Thymeleaf -->
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.numOrder}"></td>
+                <td th:text="${order.numSupplier}"></td>
+                <td th:text="${order.status}"></td>
+                <td th:text="${order.employeeId}"></td>
+                <td th:text="${order.issueDate}"></td>
+                <td th:text="${order.arrivalDate}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel">
+        <div class="table-header">
+        <h2>Fornecedores</h2>
+            <button type="submit" class="button" > Adicionar</button>
+        </div>
+        <table>
+            <tr>
+                <th>N Fornecedor</th>
+                <th>Localidade</th>
+                <th>Telefone</th>
+                <th>Email</th>
+            </tr>
+            <!-- Loop through your suppliers using Thymeleaf -->
+            <tr th:each="supplier : ${suppliers}">
+                <td th:text="${supplier.id}"></td>
+                <td th:text="${supplier.location}"></td>
+                <td th:text="${supplier.phone}"></td>
+                <td th:text="${supplier.email}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel">
+        <h2>Estados Encomenda</h2>
+        <table>
+            <tr>
+                <th>N Estado</th>
+                <th>Descricao</th>
+            </tr>
+            <!-- Loop through your order states using Thymeleaf -->
+            <tr>
+                <td>1</td>
+                <td>Pedido</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pago</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Processamento</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Entregue</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* Estilos básicos para o layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.form-container {
+    background:  #FFEE93;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 560px;
+}
+h1 {
+    color: #424242;
+    text-align: center;
+}
+label {
+    margin-top: 10px;
+    display: block;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #FFCA28;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #FFB300;
+}
+button.back {
+    background-color: #CCC;
+    color: black;
+    margin-top: 10px;
+}
